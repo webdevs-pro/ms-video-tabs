@@ -1,0 +1,71 @@
+.elementor-widget-ms_video_tabs .elementor-widget-container {
+   display: flex;
+}
+
+
+
+.elementor-widget-ms_video_tabs .ms_video_tabs_content_pane {
+   width: 100%;
+}
+
+.elementor-widget-ms_video_tabs .ms_video_tabs_content_pane .video_wrap {
+   position: relative;
+}
+.elementor-widget-ms_video_tabs .ms_video_tabs_content_pane .video_wrap video {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   
+}
+.elementor-widget-ms_video_tabs .ms_video_tabs_content_pane .video_wrap video.fade_in {
+   animation: video_fade_in_down 300ms forwards linear;
+}
+
+
+.elementor-widget-ms_video_tabs .ms_video_tabs_button {
+   position: relative;
+   padding: 10px;
+   border: 1px solid #333;
+   margin-bottom: 10px;
+   cursor: pointer;
+}
+.elementor-widget-ms_video_tabs .ms_video_tabs_button.active {
+   /* box-shadow: 0 0 2px red; */
+}
+.elementor-widget-ms_video_tabs .ms_video_tabs_button .ms_video_tabs_button_progress {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   height: 3px;
+   background: red;
+}
+.elementor-widget-ms_video_tabs .ms_video_tabs_button.active .ms_video_tabs_button_progress {
+   animation-name: video_progress;
+   animation-timing-function: linear;
+
+}
+/* .elementor-widget-ms_video_tabs .ms_video_tabs_button:not(.active) .ms_video_tabs_button_progress {
+   width: 0 !important;
+} */
+
+@keyframes video_progress {
+   from {
+      width: 0%;
+   }
+   to {
+      width: 100%;
+   }
+}
+
+@keyframes video_fade_in_down {
+   from {
+      opacity: 0;
+      transform: translateY(-10px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0px);
+   }
+}
